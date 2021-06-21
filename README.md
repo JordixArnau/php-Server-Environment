@@ -76,7 +76,7 @@ if (isset($_SESSION["email"])) {
 
 ## validate.php
 
-File with all the validation functions needed for the application. Basically it checks if the email and password are valid and let the user enter to the dashboard or it return to the index.php page showing an alert message.
+A file with all the validation functions needed for the application. Basically, it checks if the email and password are valid and let the user enter the dashboard or it returns to the index.php page showing an alert message.
 
 ```
 $loginUser = $_POST["user"];
@@ -97,7 +97,7 @@ if ($loginUser == $user && password_verify($loginPass, $pass)) {
 
 ## panel.php
 
-Mockup of a dashboard page where the user is redirected once has logged in. We've implemented different PHP features:
+A mockup of a dashboard page where the user is redirected once has logged in. We've implemented different PHP features:
 
 * If the user tries to access the page without logging in, there's a redirection that goes back to the index.php page.
 
@@ -113,15 +113,15 @@ if (!isset($_SESSION["email"])) {
 <div class="panel-link"><?= $_SESSION["email"] ?></div>
 ```
 
-We show too the "user name" that we have obtained from cutting the email string:
+We show the "user name" that we have obtained from cutting the email string:
 
 ```
 $nameArr = explode("@", $user);
 $name = ucwords($nameArr[0]);
 ```
-The *explode()* function breaks the string into an array using the first string paramether as a breakpoint [https://www.php.net/manual/es/function.explode] 
+The *explode()* function breaks the string into an array using the first string parameter as a breakpoint [https://www.php.net/manual/es/function.explode] 
 
-The *ucwords()* function trasforms to upper case the first letter of a string [https://www.php.net/manual/es/function.ucwords]
+The *ucwords()* function trnasforms to uppercase the first letter of a string [https://www.php.net/manual/es/function.ucwords]
 
 ```
 Welcome to your Dashboard, <strong><?= $_SESSION["username"] ?></strong>
@@ -131,7 +131,7 @@ Welcome to your Dashboard, <strong><?= $_SESSION["username"] ?></strong>
 
 ## close_session.php
 
-Filer with all the functions that the app needs to close the opened user session. We've mainly use it to unset and destroy the *$_SESSION* variable and the cookies we've set up with it.
+Filer with all the functions that the app needs to close the opened user session. We've mainly used it to unset and destroy the *$_SESSION* variable and the cookies we've set up with it.
 
 ```
 unset($_SESSION);
@@ -154,7 +154,7 @@ if (ini_get("session.use_cookies")) {
 }
 ```
 
-We reset the cookie and all its paramethers [https://www.php.net/manual/en/function.ini-get.php]
+We reset the cookie and all its parameters [https://www.php.net/manual/en/function.ini-get.php]
 
 ```
 session_destroy();
@@ -166,4 +166,4 @@ We destroy the session with the *session_destroy()* function [https://www.php.ne
 header('Location: index.php?logout=true');
 ```
 
-Finally we redirect the user to the index.php site and add to the link a paramether that specifies that the user has just logged out.
+Finally, we redirect the user to the index.php site and add to the link a parameter that specifies that the user has just logged out.
