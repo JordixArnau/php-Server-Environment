@@ -1,0 +1,52 @@
+body {
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+aside {
+  width: 20%;
+  padding: 20px 0;
+}
+
+.aside-tab:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+main {
+  width: 80%;
+  padding: 25px;
+}
+
+a,
+a:link {
+  color: white;
+  background-color: transparent !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.panel-link:hover {
+  color: #0d6efd;
+  cursor: pointer;
+}
